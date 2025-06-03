@@ -12,13 +12,37 @@ public class Paciente {
     private String area; // SAPU, urgencia_adulto e infantil
     private Stack<String> historialCambios = new Stack<>();
 
+    public Paciente() {
+        tiempoLlegada = System.currentTimeMillis() / 1000;
+    }
+
     public void registrarCambio(String descripcion) {
         historialCambios.add(descripcion);
     }
 
-    String obtenerUltimoCambio() {
+    public String obtenerUltimoCambio() {
         return historialCambios.pop();
     }
 
+    public long tiempoEsperaActual() {
+        long tiempoActual = System.currentTimeMillis() / 1000;
+        return tiempoLlegada - tiempoActual;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setCategoria(int categoria) {
+        this.categoria = categoria;
+    }
 
 }

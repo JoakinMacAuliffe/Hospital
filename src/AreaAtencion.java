@@ -15,7 +15,8 @@ public class AreaAtencion {
     }
 
     public boolean estaSaturada() {
-
+        return pacientesHeap.size() >= capacidadMaxima;
     }
+
 
 }
