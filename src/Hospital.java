@@ -9,6 +9,12 @@ public class Hospital {
     private Map<String, AreaAtencion> areasAtencion;
     private List<Paciente> pacientesAtendidos;
 
+    public Hospital() {
+        areasAtencion.put("SAPU", null);
+        areasAtencion.put("urgencia_adulto", null);
+        areasAtencion.put("infantil", null);
+    }
+
     public void registrarPaciente(Paciente p) {
         colaAtencion.add(p);
         pacientesTotales.put(p.getId(), p);
@@ -16,7 +22,7 @@ public class Hospital {
 
     public void reasignarCategoria(String id, int nuevaCategoria) {
         Paciente paciente = buscarPacienteId(id);
-        if(!(paciente == null)) {
+        if(paciente != null) {
             paciente.setCategoria(nuevaCategoria);
             paciente.registrarCambio("Cambio de categoria.");
         }
@@ -31,6 +37,7 @@ public class Hospital {
         for(Map.Entry<String, Paciente> entry : pacientesTotales.entrySet()) {
             if(entry.getKey().equals(id)) return entry.getValue();
         }
+
         return null;
     }
 

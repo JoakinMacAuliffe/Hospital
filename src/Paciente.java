@@ -25,8 +25,7 @@ public class Paciente {
     }
 
     public long tiempoEsperaActual() {
-        long tiempoActual = System.currentTimeMillis() / 1000;
-        return tiempoLlegada - tiempoActual;
+
     }
 
     public String getNombre() {
