@@ -12,8 +12,13 @@ public class Paciente {
     private String area; // SAPU, urgencia_adulto e infantil
     private Stack<String> historialCambios = new Stack<>();
 
-    public Paciente() {
-        tiempoLlegada = System.currentTimeMillis() / 1000;
+    public Paciente(String nombre, String apellido, String id, int categoria, String estado, Stack<String> historialCambios) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.id = id;
+        this.categoria = categoria;
+        this.estado = estado;
+        this.historialCambios = historialCambios;
     }
 
     public void registrarCambio(String descripcion) {
@@ -24,8 +29,8 @@ public class Paciente {
         return historialCambios.pop();
     }
 
-    public long tiempoEsperaActual() {
-        return 0;
+    public long tiempoEsperaActual(long timestamp) {
+        return tiempoLlegada - timestamp;
     }
 
     public String getNombre() {
@@ -42,6 +47,10 @@ public class Paciente {
 
     public String getArea() {
         return area;
+    }
+
+    public void setArea(AreaAtencion areaAtencion) {
+        this.area = areaAtencion.getNombre();
     }
 
     public void setCategoria(int categoria) {

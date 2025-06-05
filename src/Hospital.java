@@ -9,13 +9,10 @@ public class Hospital {
     private Map<String, AreaAtencion> areasAtencion; // String es la id del paciente
     private List<Paciente> pacientesAtendidos;
 
-//    private AreaAtencion = new AreaAtencion("SAPU", )
+    private AreaAtencion urgenciaAdulto = new AreaAtencion("urgencia_adulto", 100);
+    private AreaAtencion infantil = new AreaAtencion("infantil", 100);
+    private AreaAtencion SAPU = new AreaAtencion("SAPU", 100);
 
-    public Hospital() {
-        areasAtencion.put("SAPU", null);
-        areasAtencion.put("urgencia_adulto", null);
-        areasAtencion.put("infantil", null);
-    }
 
     public void registrarPaciente(Paciente paciente) {
         colaAtencion.add(paciente);
@@ -23,10 +20,12 @@ public class Hospital {
     }
 
     public void reasignarCategoria(String id, int nuevaCategoria) {
-        Paciente paciente = buscarPacienteId(id);
-        if(paciente != null) {
-            paciente.setCategoria(nuevaCategoria);
-            paciente.registrarCambio("Cambio de categoria.");
+        if(nuevaCategoria > 0 && nuevaCategoria <= 5) {
+            Paciente paciente = pacientesTotales.get(id);
+            if (paciente != null) {
+                paciente.setCategoria(nuevaCategoria);
+                paciente.registrarCambio("Cambio de categoria.");
+            }
         }
     }
 
@@ -34,22 +33,6 @@ public class Hospital {
         Paciente p = colaAtencion.remove();
 //        areasAtencion.put(p.getId(), new AreaAtencion(p.getArea(), ));
         pacientesAtendidos.add(p);
-        return null;
-    }
-
-    public Paciente buscarPacienteId(String id) {
-        for(Map.Entry<String, Paciente> entry : pacientesTotales.entrySet()) {
-            if(entry.getKey().equals(id)) return entry.getValue();
-        }
-
-        return null;
-    }
-
-    public Paciente bucarPacienteNombre(String nombre) {
-        for(Map.Entry<String, Paciente> entry : pacientesTotales.entrySet()) {
-            if(entry.getValue().getNombre().equals(nombre)) return entry.getValue();
-        }
-
         return null;
     }
 

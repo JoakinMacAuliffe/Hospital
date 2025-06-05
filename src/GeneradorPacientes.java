@@ -1,33 +1,30 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class GeneradorPacientes {
 
     private String[] nombres = {"Martin", "Sergio", "Joakin", "Pergio", "Oliver", "Jair", "Terence", "Nano"};
     private String[] apellidos = {"Correa", "Pinto", "Mac Auliffe", "Olivares", "Landero", "Novoa", "Olguin", "Tapia", "Lopez"};
+    private Set<String> runSet = new HashSet<>();
     private int contadorId = 1;
-
+    private List<Paciente> pacientes = new ArrayList<>();
     private Random random = new Random();
 
-
-    private List<Paciente> pacientes = new ArrayList<>();
-
-    GeneradorPacientes(int n) {
+    public List<Paciente> generarPacientes(int n) {
         for (int i = 0; i < n; i++) {
-            String nombre = generarNombre();
-            String id = generarRUN();
-            Paciente paciente = new Paciente();
+            String nombre = nombres[random.nextInt(nombres.length - 1)];
+            String apellido = apellidos[random.nextInt(apellidos.length - 1)];
+            String id = generarRUTUnico();
+            int categoria = generarCategoria();
+            Stack<String> historialCambios = new Stack<>();
+
+            Paciente paciente = new Paciente(nombre, apellido, id, categoria, "en_espera", historialCambios);
+
+            pacientes.add(paciente);
         }
+        return pacientes;
     }
 
-    public String generarNombre() {
-        String nombre = nombres[random.nextInt(nombres.length - 1)] + " " + apellidos[random.nextInt(apellidos.length - 1)];
-        System.out.println(nombre);
-        return nombre;
-    }
-
-    public String generarRUN() {
+    public String generarRUT() {
         int min = 7000000;
         int max = 26000000;
         int numero = min + random.nextInt(max - min + 1); // RUT sin dígito verificador
@@ -55,4 +52,29 @@ public class GeneradorPacientes {
             }
             return numeroStr + "-" + digitoVerificador;
         }
+
+    public String generarRUTUnico() {
+        while (true) {
+            String run = generarRUT();
+            if (runSet.add(run)) {
+                return run;
+            }
+        }
     }
+
+    public int generarCategoria() { // Genera categorías según probabilidad
+        int probabilidad = random.nextInt(100);
+        if(probabilidad < 10) {
+            return 1;
+        } else if(probabilidad < 25) {
+            return 2;
+        } else if(probabilidad < 43) {
+            return 3;
+        } else if(probabilidad < 70) {
+            return 4;
+        } else {
+            return 5;
+        }
+    }
+
+}

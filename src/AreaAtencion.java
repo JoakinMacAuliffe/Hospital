@@ -23,6 +23,10 @@ public class AreaAtencion {
         return pacientesHeap.size() >= capacidadMaxima;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
 
 
 
