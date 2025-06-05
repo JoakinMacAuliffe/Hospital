@@ -1,7 +1,7 @@
 import java.util.*;
 import java.time.Instant;
 
-public class Paciente {
+public class Paciente implements Comparable<Paciente>{
 
     private String nombre;
     private String apellido;
@@ -33,6 +33,11 @@ public class Paciente {
         return tiempoLlegada - timestamp;
     }
 
+    @Override
+    public int compareTo(Paciente otro) {
+        return Integer.compare(this.categoria, otro.getCategoria());
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -47,6 +52,10 @@ public class Paciente {
 
     public String getArea() {
         return area;
+    }
+
+    public int getCategoria() {
+        return categoria;
     }
 
     public void setArea(AreaAtencion areaAtencion) {

@@ -1,4 +1,4 @@
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class AreaAtencion {
 
@@ -25,6 +25,15 @@ public class AreaAtencion {
 
     public String getNombre() {
         return nombre;
+    }
+
+    List<Paciente> obtenerPacientesPorHeapSort() {
+        List<Paciente> pacientesOrdenados = new ArrayList<>();
+        PriorityQueue<Paciente> copiaHeap = new PriorityQueue<>(pacientesHeap);
+        while(!copiaHeap.isEmpty()) {
+            pacientesOrdenados.add(copiaHeap.poll());
+        }
+        return pacientesOrdenados;
     }
 
 
