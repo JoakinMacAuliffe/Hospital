@@ -40,6 +40,10 @@ public class Paciente {
         return id;
     }
 
+    public String getArea() {
+        return area;
+    }
+
     public void setCategoria(int categoria) {
         this.categoria = categoria;
     }

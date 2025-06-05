@@ -30,7 +30,7 @@ public class Hospital {
 
     Paciente atenderSiguiente() {
         Paciente p = colaAtencion.remove();
-
+        switch(p.get)
     }
 
     public Paciente buscarPacienteId(String id) {
