@@ -6,8 +6,10 @@ public class Hospital {
 
     private Map<String, Paciente> pacientesTotales;
     private PriorityQueue<Paciente> colaAtencion;
-    private Map<String, AreaAtencion> areasAtencion;
+    private Map<String, AreaAtencion> areasAtencion; // String es la id del paciente
     private List<Paciente> pacientesAtendidos;
+
+//    private AreaAtencion = new AreaAtencion("SAPU", )
 
     public Hospital() {
         areasAtencion.put("SAPU", null);
@@ -15,9 +17,9 @@ public class Hospital {
         areasAtencion.put("infantil", null);
     }
 
-    public void registrarPaciente(Paciente p) {
-        colaAtencion.add(p);
-        pacientesTotales.put(p.getId(), p);
+    public void registrarPaciente(Paciente paciente) {
+        colaAtencion.add(paciente);
+        pacientesTotales.put(paciente.getId(), paciente);
     }
 
     public void reasignarCategoria(String id, int nuevaCategoria) {
@@ -28,9 +30,11 @@ public class Hospital {
         }
     }
 
-    Paciente atenderSiguiente() {
+    public Paciente atenderSiguiente() {
         Paciente p = colaAtencion.remove();
-        switch(p.get)
+//        areasAtencion.put(p.getId(), new AreaAtencion(p.getArea(), ));
+        pacientesAtendidos.add(p);
+        return null;
     }
 
     public Paciente buscarPacienteId(String id) {
