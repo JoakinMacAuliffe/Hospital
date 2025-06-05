@@ -25,7 +25,7 @@ public class Paciente {
     }
 
     public long tiempoEsperaActual() {
-
+        return 0;
     }
 
     public String getNombre() {
