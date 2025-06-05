@@ -41,4 +41,14 @@ public class Hospital {
         return null;
     }
 
+    public Paciente bucarPacienteNombre(String nombre) {
+        for(Map.Entry<String, Paciente> entry : pacientesTotales.entrySet()) {
+            if(entry.getValue().getNombre().equals(nombre)) return entry.getValue();
+        }
+
+        return null;
+    }
+
+
+
 }
