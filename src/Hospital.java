@@ -48,10 +48,15 @@ public class Hospital {
     }
 
     public Paciente atenderSiguiente() {
-        Paciente p = colaAtencion.remove();
-//        areasAtencion.put(p.getId(), new AreaAtencion(p.getArea(), ));
-        pacientesAtendidos.add(p);
-        return null;
+        Paciente paciente = colaAtencion.poll();
+        if(areasAtencion.get(paciente.getArea()) != null || (!areasAtencion.get(paciente.getArea()).estaSaturada())) {
+            // Si el area del paciente existe y no esta saturada
+            pacientesAtendidos.add(paciente);
+            paciente.setEstado("en_atencion");
+            return areasAtencion.get(paciente.getArea()).atenderPaciente();
+        } else {
+            return null;
+        }
     }
 
 

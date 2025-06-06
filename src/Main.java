@@ -6,7 +6,7 @@ public class Main{
         List<Paciente> pacientes = generadorPacientes.generarPacientes(100);
 
         for (Paciente paciente : pacientes) {
-            System.out.println(paciente.getNombre() + " " + paciente.getId());
+            System.out.println(paciente.getNombre() + " " + paciente.getApellido() + " " + paciente.getId());
         }
     }
 }

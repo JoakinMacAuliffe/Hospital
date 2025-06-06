@@ -17,7 +17,7 @@ public class Paciente implements Comparable<Paciente>{
         this.apellido = apellido;
         this.id = id;
         this.categoria = categoria;
-        this.estado = estado;
+        this.estado = "en_espera";
         this.historialCambios = historialCambios;
     }
 
@@ -35,7 +35,11 @@ public class Paciente implements Comparable<Paciente>{
 
     @Override
     public int compareTo(Paciente otro) {
-        return Integer.compare(this.categoria, otro.getCategoria());
+        if(this.categoria != otro.getCategoria()) {
+            return Integer.compare(this.categoria, otro.getCategoria());
+        } else {
+            return Long.compare(this.tiempoLlegada, otro.getTiempoLlegada());
+        }
     }
 
     public String getNombre() {
@@ -58,12 +62,20 @@ public class Paciente implements Comparable<Paciente>{
         return categoria;
     }
 
+    public long getTiempoLlegada() {
+        return tiempoLlegada;
+    }
+
     public void setArea(AreaAtencion areaAtencion) {
         this.area = areaAtencion.getNombre();
     }
 
     public void setCategoria(int categoria) {
         this.categoria = categoria;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
 }
