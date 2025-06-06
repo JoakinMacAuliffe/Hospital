@@ -2,8 +2,12 @@ import java.util.*;
 
 public class GeneradorPacientes {
 
-    private String[] nombres = {"Martin", "Sergio", "Joakin", "Pergio", "Oliver", "Jair", "Terence", "Nano"};
-    private String[] apellidos = {"Correa", "Pinto", "Mac Auliffe", "Olivares", "Landero", "Novoa", "Olguin", "Tapia", "Lopez"};
+    private String[] nombres = {"Martin", "Sergio", "Joakin", "Pergio", "Oliver", "Jair"
+            , "Terence", "Nano", "Jalil", "Jalib", "Jacobiano"};
+
+    private String[] apellidos = {"Correa", "Pinto", "Mac Auliffe", "Olivares", "Landero"
+            , "Novoa", "Olguin", "Tapia", "Lopez", "Turbes"};
+
     private Set<String> runSet = new HashSet<>();
     private int contadorId = 1;
     private List<Paciente> pacientes = new ArrayList<>();
@@ -33,7 +37,7 @@ public class GeneradorPacientes {
         // Calcular dígito verificador
         int suma = 0;
         int factor = 2;
-        for (int i = numeroStr.length() - 1; i >= 0; i--) {
+        for(int i = numeroStr.length() - 1; i >= 0; i--) {
             suma += Character.getNumericValue(numeroStr.charAt(i)) * factor;
             if (factor == 7) {
                 factor = 2;
@@ -54,9 +58,9 @@ public class GeneradorPacientes {
         }
 
     public String generarRUTUnico() {
-        while (true) {
+        while(true) {
             String run = generarRUT();
-            if (runSet.add(run)) {
+            if(runSet.add(run)) {
                 return run;
             }
         }
