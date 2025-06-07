@@ -3,31 +3,36 @@ import java.util.*;
 
 public class SimuladorUrgencia {
 
-    private long timestamp = 0;
     private int pacientesAcumulados = 0;
     private List<Paciente> listaPacientes;
 
-    public void simular(int pacientesPorDia) {
+    public void simular() {
+
+        GeneradorPacientes generadorPacientes = new GeneradorPacientes();
+
+        listaPacientes = leerPacientesDesdeArchivo("Pacientes_24h.txt");
 
         Hospital hospital = new Hospital();
 
-        for(int i = 0; i < 1440; i++) {
+        for(int tiempoActualMinutos = 1; tiempoActualMinutos <= 1440; tiempoActualMinutos++) {
 
-            timestamp += 60; // Pasa un minuto
-
-            if(timestamp%600 == 0) { // Cada 10 minutos
-                // Llega un nuevo paciente
+            if (!listaPacientes.isEmpty() && listaPacientes.getFirst().getTiempoLlegada() == tiempoActualMinutos) {
+                Paciente paciente = listaPacientes.removeFirst();
+                hospital.registrarPaciente(paciente);
+                System.out.println(paciente.tiempoEsperaActual(tiempoActualMinutos));
                 pacientesAcumulados++;
-            } else if (timestamp%900 == 0) { // Cada 15 minutos
-
             }
 
             if(pacientesAcumulados == 3) {
                 // Atender dos pacientes inmediatamente
+                hospital.atenderSiguiente();
+                hospital.atenderSiguiente();
                 pacientesAcumulados = 0; // Reiniciar contador
             }
 
         }
+
+        System.out.println(pacientesAcumulados);
 
     }
 
@@ -56,7 +61,8 @@ public class SimuladorUrgencia {
 
     public static void main(String[] main) {
         SimuladorUrgencia simuladorUrgencia = new SimuladorUrgencia();
-        List<Paciente> pacienteList = simuladorUrgencia.leerPacientesDesdeArchivo("test.txt");
+        List<Paciente> pacienteList = simuladorUrgencia.leerPacientesDesdeArchivo("Pacientes_24h.txt");
+        simuladorUrgencia.simular();
 
     }
 

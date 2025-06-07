@@ -9,7 +9,7 @@ public class GeneradorPacientes {
             , "Novoa", "Olguin", "Tapia", "Lopez", "Turbes"};
     private String[] areas = {"SAPU", "infantil", "urgencia_adulto"};
     private long timestamp = 0;
-    private Set<String> runSet = new HashSet<>();
+    private Set<String> runSet = new HashSet<>(); // Set que contiene todos los RUNs de los pacientes, utilizado para evitar que se repitan
     private List<Paciente> pacientes = new ArrayList<>();
     private Random random = new Random();
 
@@ -19,7 +19,7 @@ public class GeneradorPacientes {
             String apellido = apellidos[random.nextInt(apellidos.length)];
             String id = generarRUTUnico();
             int categoria = generarCategoria();
-            long tiempoLlegada = i * 600;
+            long tiempoLlegada = (i * 600 + 600) / 60;
             String area = areas[random.nextInt(areas.length)];
             Stack<String> historialCambios = new Stack<>();
 

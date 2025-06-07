@@ -33,7 +33,7 @@ public class Paciente implements Comparable<Paciente>{
     }
 
     public long tiempoEsperaActual(long timestamp) {
-        return tiempoLlegada - timestamp;
+        return (timestamp - tiempoLlegada) / 60;
     }
 
     @Override
