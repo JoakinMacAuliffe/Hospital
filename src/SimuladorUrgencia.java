@@ -5,6 +5,8 @@ public class SimuladorUrgencia {
 
     public void simular(int pacientesPorDia) {
 
+        Hospital hospital = new Hospital();
+
         for(int i = 0; i < 1440; i++) {
 
             timestamp += 60; // Pasa un minuto
@@ -24,5 +26,10 @@ public class SimuladorUrgencia {
         }
 
     }
+
+//    public Paciente ingresarPaciente() {
+//
+//    }
+//
 
 }

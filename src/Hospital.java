@@ -14,23 +14,25 @@ public class Hospital {
         areasAtencion = new HashMap<>();
         pacientesAtendidos = new ArrayList<>();
 
-        areasAtencion.put("SAPU", new AreaAtencion("urgencia_adulto", 100));
+        areasAtencion.put("SAPU", new AreaAtencion("SAPU", 100));
         areasAtencion.put("infantil", new AreaAtencion("infantil", 100));
         areasAtencion.put("urgencia_adulto", new AreaAtencion("urgencia_adulto", 100));
 
     }
 
     public void registrarPaciente(Paciente paciente) {
+        if(paciente.getArea().equalsIgnoreCase("sapu")) { // Asignar area correspondiente al paciente
+            paciente.setArea(areasAtencion.get("sapu"));
+        } else if(paciente.getArea().equalsIgnoreCase("infantil")) {
+            paciente.setArea(areasAtencion.get("infantil"));
+        } else if(paciente.getArea().equalsIgnoreCase("urgencia_adulto")) {
+            paciente.setArea(areasAtencion.get("urgencia_adulto"));
+        } else {
+            System.out.println("Error: Area de atencion inexistente.");
+            return;
+        }
         colaAtencion.add(paciente);
         pacientesTotales.put(paciente.getId(), paciente);
-        switch(paciente.getArea()) { // Añadir paciente a su respectiva area
-            case "SAPU":
-                areasAtencion.get("SAPU").ingresarPaciente(paciente);
-            case "infantil":
-                areasAtencion.get("infantil").ingresarPaciente(paciente);
-            case "urgencia_adulto":
-                areasAtencion.get("urgencia_adulto").ingresarPaciente(paciente);
-        }
         colaAtencion.add(paciente);
     }
 
@@ -48,17 +50,50 @@ public class Hospital {
     }
 
     public Paciente atenderSiguiente() {
-        Paciente paciente = colaAtencion.poll();
-        if(areasAtencion.get(paciente.getArea()) != null || (!areasAtencion.get(paciente.getArea()).estaSaturada())) {
-            // Si el area del paciente existe y no esta saturada
-            pacientesAtendidos.add(paciente);
-            paciente.setEstado("en_atencion");
-            return areasAtencion.get(paciente.getArea()).atenderPaciente();
+        if(!colaAtencion.isEmpty()) {
+            Paciente paciente = colaAtencion.poll();
+            AreaAtencion areaAtencion = areasAtencion.get(paciente.getArea());
+            if (areaAtencion != null) {
+                // Si el area del paciente existe y no esta saturada
+                pacientesAtendidos.add(paciente);
+                paciente.setEstado("en_atencion");
+                return paciente;
+            } else {
+                System.out.println("Error: Area de atencion invalida.");
+            }
         } else {
-            return null;
+            System.out.println("Error: Cola de atencion vacia.");
         }
+        return null;
     }
 
+    public List<Paciente> getPacientesPorCategoria(int categoria) {
+        List<Paciente> pacientesPorCategoria = new ArrayList<>();
+        for(Map.Entry<String, Paciente> entry : pacientesTotales.entrySet()) { // Recorre map mediante un iterador
+            if(entry.getValue().getCategoria() == categoria) {
+                pacientesPorCategoria.add(entry.getValue());
+            }
+        }
+        return pacientesPorCategoria;
+    }
 
+    public AreaAtencion obtenerArea(String nombre) {
+        return areasAtencion.get(nombre);
+    }
+
+    public static void main(String[] args) {
+
+        GeneradorPacientes generadorPacientes = new GeneradorPacientes();
+        Hospital hospital = new Hospital();
+
+        Paciente p1 = generadorPacientes.generarPaciente();
+        Paciente p2 = generadorPacientes.generarPaciente();
+
+        hospital.registrarPaciente(p1);
+        hospital.registrarPaciente(p2);
+
+
+
+    }
 
 }

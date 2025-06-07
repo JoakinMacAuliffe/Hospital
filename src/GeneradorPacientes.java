@@ -4,28 +4,39 @@ public class GeneradorPacientes {
 
     private String[] nombres = {"Martin", "Sergio", "Joakin", "Pergio", "Oliver", "Jair"
             , "Terence", "Nano", "Jalil", "Jalib", "Jacobiano"};
-
     private String[] apellidos = {"Correa", "Pinto", "Mac Auliffe", "Olivares", "Landero"
             , "Novoa", "Olguin", "Tapia", "Lopez", "Turbes"};
-
+    private String[] areas = {"SAPU", "infantil", "urgencia_adulto"};
+    private long timestamp = 0;
     private Set<String> runSet = new HashSet<>();
-    private int contadorId = 1;
     private List<Paciente> pacientes = new ArrayList<>();
     private Random random = new Random();
 
     public List<Paciente> generarPacientes(int n) {
         for (int i = 0; i < n; i++) {
-            String nombre = nombres[random.nextInt(nombres.length - 1)];
-            String apellido = apellidos[random.nextInt(apellidos.length - 1)];
+            String nombre = nombres[random.nextInt(nombres.length)];
+            String apellido = apellidos[random.nextInt(apellidos.length)];
             String id = generarRUTUnico();
             int categoria = generarCategoria();
+            String area = areas[random.nextInt(areas.length)];
             Stack<String> historialCambios = new Stack<>();
 
-            Paciente paciente = new Paciente(nombre, apellido, id, categoria, "en_espera", historialCambios);
+            Paciente paciente = new Paciente(nombre, apellido, id, categoria, "en_espera", area, historialCambios);
 
             pacientes.add(paciente);
         }
         return pacientes;
+    }
+
+    public Paciente generarPaciente() {
+        String nombre = nombres[random.nextInt(nombres.length)];
+        String apellido = apellidos[random.nextInt(apellidos.length)];
+        String id = generarRUTUnico();
+        int categoria = generarCategoria();
+        String area = areas[random.nextInt(areas.length)];
+        Stack<String> historialCambios = new Stack<>();
+        Paciente paciente = new Paciente(nombre, apellido, id, categoria, "en_espera", area, historialCambios);
+        return paciente;
     }
 
     public String generarRUT() {

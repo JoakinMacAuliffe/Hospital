@@ -12,11 +12,13 @@ public class Paciente implements Comparable<Paciente>{
     private String area; // SAPU, urgencia_adulto e infantil
     private Stack<String> historialCambios = new Stack<>();
 
-    public Paciente(String nombre, String apellido, String id, int categoria, String estado, Stack<String> historialCambios) {
+    public Paciente(String nombre, String apellido, String id, int categoria,
+                    long tiempoLlegada, String estado, String area, Stack<String> historialCambios) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.id = id;
         this.categoria = categoria;
+        this.tiempoLlegada = tiempoLlegada;
         this.estado = "en_espera";
         this.historialCambios = historialCambios;
     }

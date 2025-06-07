@@ -12,11 +12,19 @@ public class AreaAtencion {
     }
 
     public void ingresarPaciente(Paciente p) {
-        pacientesHeap.add(p);
+        if(!estaSaturada()) {
+            pacientesHeap.add(p);
+        }
     }
 
     public Paciente atenderPaciente() {
-        return pacientesHeap.poll();
+        if(!pacientesHeap.isEmpty()) {
+            Paciente paciente = pacientesHeap.poll();
+            paciente.setEstado("atendido");
+            return paciente;
+        } else {
+            return null;
+        }
     }
 
     public boolean estaSaturada() {
