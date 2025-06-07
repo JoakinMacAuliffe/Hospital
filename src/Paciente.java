@@ -20,6 +20,7 @@ public class Paciente implements Comparable<Paciente>{
         this.categoria = categoria;
         this.tiempoLlegada = tiempoLlegada;
         this.estado = "en_espera";
+        this.area = area;
         this.historialCambios = historialCambios;
     }
 
@@ -58,6 +59,10 @@ public class Paciente implements Comparable<Paciente>{
 
     public String getArea() {
         return area;
+    }
+
+    public String getEstado() {
+        return estado;
     }
 
     public int getCategoria() {

@@ -1,0 +1,144 @@
+Nombre: Pergio, Apellido: Olguin, ID: 11314974-4, Categoria: 5, TiempoLlegada: 0, Estado: en_espera, Area: SAPU
+Nombre: Martin, Apellido: Novoa, ID: 14224989-8, Categoria: 2, TiempoLlegada: 600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jacobiano, Apellido: Mac Auliffe, ID: 10818504-k, Categoria: 5, TiempoLlegada: 1200, Estado: en_espera, Area: SAPU
+Nombre: Pergio, Apellido: Novoa, ID: 18092105-2, Categoria: 5, TiempoLlegada: 1800, Estado: en_espera, Area: infantil
+Nombre: Terence, Apellido: Mac Auliffe, ID: 25000095-2, Categoria: 1, TiempoLlegada: 2400, Estado: en_espera, Area: infantil
+Nombre: Pergio, Apellido: Lopez, ID: 8668001-7, Categoria: 4, TiempoLlegada: 3000, Estado: en_espera, Area: infantil
+Nombre: Jacobiano, Apellido: Turbes, ID: 15655688-2, Categoria: 4, TiempoLlegada: 3600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Pergio, Apellido: Novoa, ID: 16186054-9, Categoria: 3, TiempoLlegada: 4200, Estado: en_espera, Area: SAPU
+Nombre: Sergio, Apellido: Olivares, ID: 13298284-8, Categoria: 2, TiempoLlegada: 4800, Estado: en_espera, Area: infantil
+Nombre: Pergio, Apellido: Olivares, ID: 12743119-1, Categoria: 3, TiempoLlegada: 5400, Estado: en_espera, Area: SAPU
+Nombre: Terence, Apellido: Turbes, ID: 17737859-3, Categoria: 1, TiempoLlegada: 6000, Estado: en_espera, Area: SAPU
+Nombre: Jalil, Apellido: Lopez, ID: 14227486-8, Categoria: 3, TiempoLlegada: 6600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Lopez, ID: 22683318-8, Categoria: 3, TiempoLlegada: 7200, Estado: en_espera, Area: SAPU
+Nombre: Terence, Apellido: Olivares, ID: 23554197-1, Categoria: 4, TiempoLlegada: 7800, Estado: en_espera, Area: SAPU
+Nombre: Nano, Apellido: Olguin, ID: 9915642-2, Categoria: 2, TiempoLlegada: 8400, Estado: en_espera, Area: SAPU
+Nombre: Jair, Apellido: Mac Auliffe, ID: 9870368-3, Categoria: 2, TiempoLlegada: 9000, Estado: en_espera, Area: urgencia_adulto
+Nombre: Nano, Apellido: Tapia, ID: 15243145-7, Categoria: 5, TiempoLlegada: 9600, Estado: en_espera, Area: infantil
+Nombre: Jalil, Apellido: Olguin, ID: 9939237-1, Categoria: 5, TiempoLlegada: 10200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jacobiano, Apellido: Mac Auliffe, ID: 12358767-7, Categoria: 2, TiempoLlegada: 10800, Estado: en_espera, Area: SAPU
+Nombre: Terence, Apellido: Landero, ID: 22396445-1, Categoria: 5, TiempoLlegada: 11400, Estado: en_espera, Area: SAPU
+Nombre: Nano, Apellido: Olguin, ID: 20199736-4, Categoria: 4, TiempoLlegada: 12000, Estado: en_espera, Area: infantil
+Nombre: Terence, Apellido: Mac Auliffe, ID: 9973061-7, Categoria: 4, TiempoLlegada: 12600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Oliver, Apellido: Pinto, ID: 22606848-1, Categoria: 2, TiempoLlegada: 13200, Estado: en_espera, Area: SAPU
+Nombre: Martin, Apellido: Olguin, ID: 12801691-0, Categoria: 2, TiempoLlegada: 13800, Estado: en_espera, Area: urgencia_adulto
+Nombre: Martin, Apellido: Olguin, ID: 23100993-0, Categoria: 5, TiempoLlegada: 14400, Estado: en_espera, Area: SAPU
+Nombre: Jair, Apellido: Lopez, ID: 25988234-6, Categoria: 1, TiempoLlegada: 15000, Estado: en_espera, Area: SAPU
+Nombre: Nano, Apellido: Olivares, ID: 14425857-6, Categoria: 2, TiempoLlegada: 15600, Estado: en_espera, Area: SAPU
+Nombre: Oliver, Apellido: Landero, ID: 19323174-8, Categoria: 3, TiempoLlegada: 16200, Estado: en_espera, Area: infantil
+Nombre: Sergio, Apellido: Turbes, ID: 8655681-2, Categoria: 4, TiempoLlegada: 16800, Estado: en_espera, Area: SAPU
+Nombre: Jacobiano, Apellido: Lopez, ID: 19922743-2, Categoria: 5, TiempoLlegada: 17400, Estado: en_espera, Area: infantil
+Nombre: Joakin, Apellido: Landero, ID: 22779529-8, Categoria: 2, TiempoLlegada: 18000, Estado: en_espera, Area: SAPU
+Nombre: Nano, Apellido: Mac Auliffe, ID: 19775848-1, Categoria: 5, TiempoLlegada: 18600, Estado: en_espera, Area: SAPU
+Nombre: Joakin, Apellido: Turbes, ID: 14273993-3, Categoria: 5, TiempoLlegada: 19200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Tapia, ID: 17061604-9, Categoria: 4, TiempoLlegada: 19800, Estado: en_espera, Area: SAPU
+Nombre: Martin, Apellido: Novoa, ID: 25359654-6, Categoria: 4, TiempoLlegada: 20400, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Pinto, ID: 12281120-4, Categoria: 2, TiempoLlegada: 21000, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jacobiano, Apellido: Pinto, ID: 11933657-0, Categoria: 5, TiempoLlegada: 21600, Estado: en_espera, Area: infantil
+Nombre: Nano, Apellido: Turbes, ID: 22357709-1, Categoria: 1, TiempoLlegada: 22200, Estado: en_espera, Area: infantil
+Nombre: Jair, Apellido: Olguin, ID: 16133768-4, Categoria: 3, TiempoLlegada: 22800, Estado: en_espera, Area: infantil
+Nombre: Jalil, Apellido: Olguin, ID: 14806741-4, Categoria: 5, TiempoLlegada: 23400, Estado: en_espera, Area: SAPU
+Nombre: Jalib, Apellido: Olguin, ID: 14874246-4, Categoria: 5, TiempoLlegada: 24000, Estado: en_espera, Area: urgencia_adulto
+Nombre: Oliver, Apellido: Landero, ID: 11414523-8, Categoria: 4, TiempoLlegada: 24600, Estado: en_espera, Area: infantil
+Nombre: Jacobiano, Apellido: Turbes, ID: 12394860-2, Categoria: 5, TiempoLlegada: 25200, Estado: en_espera, Area: SAPU
+Nombre: Martin, Apellido: Novoa, ID: 20437488-0, Categoria: 5, TiempoLlegada: 25800, Estado: en_espera, Area: SAPU
+Nombre: Terence, Apellido: Lopez, ID: 10617110-6, Categoria: 3, TiempoLlegada: 26400, Estado: en_espera, Area: SAPU
+Nombre: Joakin, Apellido: Tapia, ID: 13197322-5, Categoria: 5, TiempoLlegada: 27000, Estado: en_espera, Area: infantil
+Nombre: Pergio, Apellido: Novoa, ID: 16548736-2, Categoria: 4, TiempoLlegada: 27600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Martin, Apellido: Novoa, ID: 12527633-4, Categoria: 4, TiempoLlegada: 28200, Estado: en_espera, Area: infantil
+Nombre: Pergio, Apellido: Novoa, ID: 14049951-k, Categoria: 5, TiempoLlegada: 28800, Estado: en_espera, Area: SAPU
+Nombre: Jalil, Apellido: Landero, ID: 25026458-5, Categoria: 3, TiempoLlegada: 29400, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jalib, Apellido: Pinto, ID: 14621359-6, Categoria: 4, TiempoLlegada: 30000, Estado: en_espera, Area: infantil
+Nombre: Joakin, Apellido: Landero, ID: 21573561-3, Categoria: 5, TiempoLlegada: 30600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Lopez, ID: 17972188-0, Categoria: 4, TiempoLlegada: 31200, Estado: en_espera, Area: infantil
+Nombre: Martin, Apellido: Mac Auliffe, ID: 14404089-9, Categoria: 2, TiempoLlegada: 31800, Estado: en_espera, Area: SAPU
+Nombre: Oliver, Apellido: Tapia, ID: 22341709-4, Categoria: 4, TiempoLlegada: 32400, Estado: en_espera, Area: infantil
+Nombre: Jacobiano, Apellido: Mac Auliffe, ID: 20964970-5, Categoria: 1, TiempoLlegada: 33000, Estado: en_espera, Area: SAPU
+Nombre: Jacobiano, Apellido: Novoa, ID: 11622498-4, Categoria: 4, TiempoLlegada: 33600, Estado: en_espera, Area: SAPU
+Nombre: Jacobiano, Apellido: Correa, ID: 12062869-0, Categoria: 5, TiempoLlegada: 34200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Terence, Apellido: Landero, ID: 11073729-7, Categoria: 5, TiempoLlegada: 34800, Estado: en_espera, Area: SAPU
+Nombre: Jalib, Apellido: Turbes, ID: 16576104-9, Categoria: 2, TiempoLlegada: 35400, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jalil, Apellido: Tapia, ID: 8883853-k, Categoria: 5, TiempoLlegada: 36000, Estado: en_espera, Area: urgencia_adulto
+Nombre: Martin, Apellido: Tapia, ID: 11977489-6, Categoria: 4, TiempoLlegada: 36600, Estado: en_espera, Area: SAPU
+Nombre: Sergio, Apellido: Olguin, ID: 15450139-8, Categoria: 5, TiempoLlegada: 37200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Oliver, Apellido: Lopez, ID: 7927744-4, Categoria: 3, TiempoLlegada: 37800, Estado: en_espera, Area: SAPU
+Nombre: Joakin, Apellido: Correa, ID: 24405933-3, Categoria: 1, TiempoLlegada: 38400, Estado: en_espera, Area: SAPU
+Nombre: Jacobiano, Apellido: Olivares, ID: 22683646-2, Categoria: 5, TiempoLlegada: 39000, Estado: en_espera, Area: infantil
+Nombre: Nano, Apellido: Tapia, ID: 19823412-5, Categoria: 5, TiempoLlegada: 39600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Pergio, Apellido: Novoa, ID: 20142556-5, Categoria: 5, TiempoLlegada: 40200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Novoa, ID: 23343653-4, Categoria: 2, TiempoLlegada: 40800, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Tapia, ID: 19600269-3, Categoria: 2, TiempoLlegada: 41400, Estado: en_espera, Area: SAPU
+Nombre: Terence, Apellido: Novoa, ID: 20948285-1, Categoria: 3, TiempoLlegada: 42000, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jalib, Apellido: Correa, ID: 15710950-2, Categoria: 2, TiempoLlegada: 42600, Estado: en_espera, Area: SAPU
+Nombre: Pergio, Apellido: Tapia, ID: 14988644-3, Categoria: 5, TiempoLlegada: 43200, Estado: en_espera, Area: SAPU
+Nombre: Jalil, Apellido: Pinto, ID: 22986828-4, Categoria: 4, TiempoLlegada: 43800, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jalib, Apellido: Correa, ID: 7140250-9, Categoria: 4, TiempoLlegada: 44400, Estado: en_espera, Area: SAPU
+Nombre: Jacobiano, Apellido: Olguin, ID: 25449110-1, Categoria: 4, TiempoLlegada: 45000, Estado: en_espera, Area: SAPU
+Nombre: Jalib, Apellido: Correa, ID: 21446774-7, Categoria: 4, TiempoLlegada: 45600, Estado: en_espera, Area: infantil
+Nombre: Pergio, Apellido: Correa, ID: 7696372-k, Categoria: 4, TiempoLlegada: 46200, Estado: en_espera, Area: SAPU
+Nombre: Martin, Apellido: Mac Auliffe, ID: 24518747-5, Categoria: 3, TiempoLlegada: 46800, Estado: en_espera, Area: urgencia_adulto
+Nombre: Terence, Apellido: Correa, ID: 16687077-1, Categoria: 5, TiempoLlegada: 47400, Estado: en_espera, Area: infantil
+Nombre: Jalil, Apellido: Mac Auliffe, ID: 18214125-9, Categoria: 5, TiempoLlegada: 48000, Estado: en_espera, Area: infantil
+Nombre: Martin, Apellido: Tapia, ID: 19341595-4, Categoria: 2, TiempoLlegada: 48600, Estado: en_espera, Area: infantil
+Nombre: Jacobiano, Apellido: Pinto, ID: 9011115-9, Categoria: 5, TiempoLlegada: 49200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jalil, Apellido: Lopez, ID: 12735300-k, Categoria: 3, TiempoLlegada: 49800, Estado: en_espera, Area: infantil
+Nombre: Jair, Apellido: Pinto, ID: 7798819-k, Categoria: 5, TiempoLlegada: 50400, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jalil, Apellido: Landero, ID: 23064707-0, Categoria: 3, TiempoLlegada: 51000, Estado: en_espera, Area: SAPU
+Nombre: Pergio, Apellido: Olivares, ID: 20107672-2, Categoria: 3, TiempoLlegada: 51600, Estado: en_espera, Area: SAPU
+Nombre: Nano, Apellido: Novoa, ID: 7422862-3, Categoria: 4, TiempoLlegada: 52200, Estado: en_espera, Area: SAPU
+Nombre: Oliver, Apellido: Novoa, ID: 11436059-7, Categoria: 3, TiempoLlegada: 52800, Estado: en_espera, Area: infantil
+Nombre: Nano, Apellido: Olivares, ID: 17855574-k, Categoria: 1, TiempoLlegada: 53400, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jacobiano, Apellido: Novoa, ID: 16598152-9, Categoria: 3, TiempoLlegada: 54000, Estado: en_espera, Area: infantil
+Nombre: Jacobiano, Apellido: Pinto, ID: 20783651-6, Categoria: 3, TiempoLlegada: 54600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jair, Apellido: Correa, ID: 12747492-3, Categoria: 1, TiempoLlegada: 55200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Turbes, ID: 25713067-3, Categoria: 3, TiempoLlegada: 55800, Estado: en_espera, Area: infantil
+Nombre: Terence, Apellido: Landero, ID: 22537647-6, Categoria: 4, TiempoLlegada: 56400, Estado: en_espera, Area: SAPU
+Nombre: Pergio, Apellido: Pinto, ID: 16178121-5, Categoria: 2, TiempoLlegada: 57000, Estado: en_espera, Area: infantil
+Nombre: Jalib, Apellido: Mac Auliffe, ID: 9981453-5, Categoria: 4, TiempoLlegada: 57600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Terence, Apellido: Pinto, ID: 16558839-8, Categoria: 4, TiempoLlegada: 58200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Pergio, Apellido: Turbes, ID: 17237588-k, Categoria: 5, TiempoLlegada: 58800, Estado: en_espera, Area: SAPU
+Nombre: Terence, Apellido: Correa, ID: 18941328-9, Categoria: 3, TiempoLlegada: 59400, Estado: en_espera, Area: SAPU
+Nombre: Nano, Apellido: Pinto, ID: 25468109-1, Categoria: 1, TiempoLlegada: 60000, Estado: en_espera, Area: infantil
+Nombre: Jalil, Apellido: Turbes, ID: 16491100-4, Categoria: 3, TiempoLlegada: 60600, Estado: en_espera, Area: SAPU
+Nombre: Nano, Apellido: Turbes, ID: 16686245-0, Categoria: 1, TiempoLlegada: 61200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Sergio, Apellido: Pinto, ID: 25666233-7, Categoria: 2, TiempoLlegada: 61800, Estado: en_espera, Area: SAPU
+Nombre: Jacobiano, Apellido: Correa, ID: 25413006-0, Categoria: 4, TiempoLlegada: 62400, Estado: en_espera, Area: infantil
+Nombre: Oliver, Apellido: Olivares, ID: 9145212-k, Categoria: 3, TiempoLlegada: 63000, Estado: en_espera, Area: urgencia_adulto
+Nombre: Oliver, Apellido: Lopez, ID: 7419281-5, Categoria: 5, TiempoLlegada: 63600, Estado: en_espera, Area: infantil
+Nombre: Jacobiano, Apellido: Pinto, ID: 21074218-2, Categoria: 4, TiempoLlegada: 64200, Estado: en_espera, Area: SAPU
+Nombre: Joakin, Apellido: Correa, ID: 17568193-0, Categoria: 4, TiempoLlegada: 64800, Estado: en_espera, Area: SAPU
+Nombre: Jair, Apellido: Novoa, ID: 20523506-k, Categoria: 4, TiempoLlegada: 65400, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Mac Auliffe, ID: 12335157-6, Categoria: 1, TiempoLlegada: 66000, Estado: en_espera, Area: SAPU
+Nombre: Jalil, Apellido: Correa, ID: 18431346-4, Categoria: 3, TiempoLlegada: 66600, Estado: en_espera, Area: SAPU
+Nombre: Joakin, Apellido: Mac Auliffe, ID: 9003353-0, Categoria: 2, TiempoLlegada: 67200, Estado: en_espera, Area: SAPU
+Nombre: Martin, Apellido: Pinto, ID: 18715908-3, Categoria: 2, TiempoLlegada: 67800, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jacobiano, Apellido: Landero, ID: 21101862-3, Categoria: 3, TiempoLlegada: 68400, Estado: en_espera, Area: SAPU
+Nombre: Jalil, Apellido: Mac Auliffe, ID: 16702277-4, Categoria: 3, TiempoLlegada: 69000, Estado: en_espera, Area: urgencia_adulto
+Nombre: Martin, Apellido: Pinto, ID: 10930507-3, Categoria: 2, TiempoLlegada: 69600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Martin, Apellido: Pinto, ID: 17649025-k, Categoria: 4, TiempoLlegada: 70200, Estado: en_espera, Area: infantil
+Nombre: Sergio, Apellido: Novoa, ID: 18436589-8, Categoria: 4, TiempoLlegada: 70800, Estado: en_espera, Area: infantil
+Nombre: Pergio, Apellido: Lopez, ID: 18751493-2, Categoria: 5, TiempoLlegada: 71400, Estado: en_espera, Area: SAPU
+Nombre: Jalil, Apellido: Olguin, ID: 11353737-k, Categoria: 5, TiempoLlegada: 72000, Estado: en_espera, Area: infantil
+Nombre: Martin, Apellido: Tapia, ID: 19930020-2, Categoria: 5, TiempoLlegada: 72600, Estado: en_espera, Area: infantil
+Nombre: Joakin, Apellido: Landero, ID: 16311588-3, Categoria: 4, TiempoLlegada: 73200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Martin, Apellido: Lopez, ID: 20531361-3, Categoria: 4, TiempoLlegada: 73800, Estado: en_espera, Area: infantil
+Nombre: Terence, Apellido: Pinto, ID: 18370562-8, Categoria: 4, TiempoLlegada: 74400, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jalib, Apellido: Landero, ID: 25316494-8, Categoria: 1, TiempoLlegada: 75000, Estado: en_espera, Area: SAPU
+Nombre: Joakin, Apellido: Novoa, ID: 12025213-5, Categoria: 2, TiempoLlegada: 75600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Pergio, Apellido: Turbes, ID: 24158774-6, Categoria: 5, TiempoLlegada: 76200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Nano, Apellido: Correa, ID: 9275225-9, Categoria: 4, TiempoLlegada: 76800, Estado: en_espera, Area: urgencia_adulto
+Nombre: Nano, Apellido: Pinto, ID: 18150776-4, Categoria: 4, TiempoLlegada: 77400, Estado: en_espera, Area: urgencia_adulto
+Nombre: Terence, Apellido: Novoa, ID: 22574327-4, Categoria: 4, TiempoLlegada: 78000, Estado: en_espera, Area: infantil
+Nombre: Pergio, Apellido: Pinto, ID: 23920735-9, Categoria: 5, TiempoLlegada: 78600, Estado: en_espera, Area: SAPU
+Nombre: Jalib, Apellido: Landero, ID: 22728546-k, Categoria: 5, TiempoLlegada: 79200, Estado: en_espera, Area: SAPU
+Nombre: Sergio, Apellido: Mac Auliffe, ID: 19393649-0, Categoria: 5, TiempoLlegada: 79800, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jair, Apellido: Pinto, ID: 16025493-9, Categoria: 3, TiempoLlegada: 80400, Estado: en_espera, Area: infantil
+Nombre: Oliver, Apellido: Mac Auliffe, ID: 19829552-3, Categoria: 4, TiempoLlegada: 81000, Estado: en_espera, Area: urgencia_adulto
+Nombre: Nano, Apellido: Landero, ID: 13702509-4, Categoria: 5, TiempoLlegada: 81600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Oliver, Apellido: Mac Auliffe, ID: 23915141-8, Categoria: 5, TiempoLlegada: 82200, Estado: en_espera, Area: SAPU
+Nombre: Pergio, Apellido: Novoa, ID: 20209136-9, Categoria: 4, TiempoLlegada: 82800, Estado: en_espera, Area: infantil
+Nombre: Sergio, Apellido: Lopez, ID: 12728798-8, Categoria: 5, TiempoLlegada: 83400, Estado: en_espera, Area: infantil
+Nombre: Jalil, Apellido: Correa, ID: 14707900-1, Categoria: 1, TiempoLlegada: 84000, Estado: en_espera, Area: infantil
+Nombre: Jair, Apellido: Correa, ID: 18896164-9, Categoria: 5, TiempoLlegada: 84600, Estado: en_espera, Area: urgencia_adulto
+Nombre: Jalil, Apellido: Turbes, ID: 21361903-9, Categoria: 3, TiempoLlegada: 85200, Estado: en_espera, Area: urgencia_adulto
+Nombre: Joakin, Apellido: Landero, ID: 23426248-3, Categoria: 5, TiempoLlegada: 85800, Estado: en_espera, Area: infantil

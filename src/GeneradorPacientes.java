@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.*;
 
 public class GeneradorPacientes {
@@ -12,31 +13,21 @@ public class GeneradorPacientes {
     private List<Paciente> pacientes = new ArrayList<>();
     private Random random = new Random();
 
-    public List<Paciente> generarPacientes(int n) {
+    public List<Paciente> generarPacientes(int n) { // 144 pacientes equivalen a 24 horas de simulacion
         for (int i = 0; i < n; i++) {
             String nombre = nombres[random.nextInt(nombres.length)];
             String apellido = apellidos[random.nextInt(apellidos.length)];
             String id = generarRUTUnico();
             int categoria = generarCategoria();
+            long tiempoLlegada = i * 600;
             String area = areas[random.nextInt(areas.length)];
             Stack<String> historialCambios = new Stack<>();
 
-            Paciente paciente = new Paciente(nombre, apellido, id, categoria, "en_espera", area, historialCambios);
+            Paciente paciente = new Paciente(nombre, apellido, id, categoria, tiempoLlegada, "en_espera", area, historialCambios);
 
             pacientes.add(paciente);
         }
         return pacientes;
-    }
-
-    public Paciente generarPaciente() {
-        String nombre = nombres[random.nextInt(nombres.length)];
-        String apellido = apellidos[random.nextInt(apellidos.length)];
-        String id = generarRUTUnico();
-        int categoria = generarCategoria();
-        String area = areas[random.nextInt(areas.length)];
-        Stack<String> historialCambios = new Stack<>();
-        Paciente paciente = new Paciente(nombre, apellido, id, categoria, "en_espera", area, historialCambios);
-        return paciente;
     }
 
     public String generarRUT() {
@@ -90,6 +81,30 @@ public class GeneradorPacientes {
         } else {
             return 5;
         }
+    }
+
+    public void guardarPacientesEnArchivo(List<Paciente> pacientes, String nombreArchivo) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo))) {
+            for (Paciente p : pacientes) {
+                writer.write(
+                        "Nombre: " + p.getNombre() +
+                                ", Apellido: " + p.getApellido() +
+                                ", ID: " + p.getId() +
+                                ", Categoria: " + p.getCategoria() +
+                                ", TiempoLlegada: " + p.getTiempoLlegada() +
+                                ", Estado: " + p.getEstado() +
+                                ", Area: " + p.getArea()
+                );
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        GeneradorPacientes generadorPacientes = new GeneradorPacientes();
+        generadorPacientes.guardarPacientesEnArchivo(generadorPacientes.generarPacientes(144), "Pacientes_24h.txt");
     }
 
 }

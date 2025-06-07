@@ -86,13 +86,11 @@ public class Hospital {
         GeneradorPacientes generadorPacientes = new GeneradorPacientes();
         Hospital hospital = new Hospital();
 
-        Paciente p1 = generadorPacientes.generarPaciente();
-        Paciente p2 = generadorPacientes.generarPaciente();
+//        Paciente p1 = generadorPacientes.generarPaciente();
+//        Paciente p2 = generadorPacientes.generarPaciente();
 
-        hospital.registrarPaciente(p1);
-        hospital.registrarPaciente(p2);
-
-
+//        hospital.registrarPaciente(p1);
+//        hospital.registrarPaciente(p2);
 
     }
 
