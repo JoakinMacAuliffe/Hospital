@@ -26,8 +26,6 @@ public class Paciente implements Comparable<Paciente>{
         this.esperaDentroDelTiempo = true;
     }
 
-    public void setEspera() { this.esperaDentroDelTiempo = false; } //false para que tenga prioridad en el comparable
-
     public void registrarCambio(String descripcion) {
         historialCambios.add(descripcion);
     }
@@ -91,5 +89,9 @@ public class Paciente implements Comparable<Paciente>{
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public void setEspera() {
+        this.esperaDentroDelTiempo = false;
+    } //false para que tenga prioridad en el comparable
 
 }
