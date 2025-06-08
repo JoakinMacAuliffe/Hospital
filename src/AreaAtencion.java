@@ -9,6 +9,7 @@ public class AreaAtencion {
     public AreaAtencion(String nombre, int capacidadMaxima) {
         this.nombre = nombre;
         this.capacidadMaxima = capacidadMaxima;
+        this.pacientesHeap = new PriorityQueue<>();
     }
 
     public void ingresarPaciente(Paciente p) {

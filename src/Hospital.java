@@ -23,7 +23,6 @@ public class Hospital {
     public void registrarPaciente(Paciente paciente) {
         colaAtencion.add(paciente);
         pacientesTotales.put(paciente.getId(), paciente);
-        colaAtencion.add(paciente);
     }
 
     public void reasignarCategoria(String id, int nuevaCategoria) {
@@ -39,8 +38,34 @@ public class Hospital {
         }
     }
 
-    public Paciente atenderSiguiente() {
+    public Paciente atenderSiguiente(long timeStamp) {
         if(!colaAtencion.isEmpty()) {
+
+            PriorityQueue<Paciente> copia = new PriorityQueue<>();
+
+            while(!colaAtencion.isEmpty()){
+
+                Paciente paciente = colaAtencion.poll();
+                long time = paciente.tiempoEsperaActual(timeStamp);
+
+                switch (paciente.getCategoria()){
+
+                    case 2:
+                        if(time >= 30) paciente.setEspera();
+                        break;
+                    case 3:
+                        if(time >= 90) paciente.setEspera();
+                        break;
+                    case 4:
+                        if(time >= 180) paciente.setEspera();
+                    default:
+                        break;
+                }
+
+                copia.add(paciente);
+            }
+
+            colaAtencion = copia;
 
             Paciente paciente = colaAtencion.poll();
             AreaAtencion areaAtencion = areasAtencion.get(paciente.getArea());
@@ -77,11 +102,17 @@ public class Hospital {
         GeneradorPacientes generadorPacientes = new GeneradorPacientes();
         Hospital hospital = new Hospital();
 
-//        Paciente p1 = generadorPacientes.generarPaciente();
-//        Paciente p2 = generadorPacientes.generarPaciente();
+        Stack<String> a = new Stack<>();
+        a.push("no");
 
-//        hospital.registrarPaciente(p1);
-//        hospital.registrarPaciente(p2);
+        Paciente p1 = new Paciente("hola", "juan", "1", 3, 0, "espera", "SAPU", a);
+        Paciente p2 = new Paciente("chao", "lol", "3", 2, 99, "espera", "SAPU", a);
+
+        hospital.registrarPaciente(p1);
+        hospital.registrarPaciente(p2);
+
+        System.out.println(hospital.atenderSiguiente(100).getNombre());
+        System.out.println(hospital.atenderSiguiente(100).getNombre());
 
     }
 

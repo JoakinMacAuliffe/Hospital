@@ -11,6 +11,7 @@ public class Paciente implements Comparable<Paciente>{
     private String estado;
     private String area; // SAPU, urgencia_adulto e infantil
     private Stack<String> historialCambios = new Stack<>();
+    private Boolean sobrepasoEspera;
 
     public Paciente(String nombre, String apellido, String id, int categoria,
                     long tiempoLlegada, String estado, String area, Stack<String> historialCambios) {
@@ -22,7 +23,10 @@ public class Paciente implements Comparable<Paciente>{
         this.estado = "en_espera";
         this.area = area;
         this.historialCambios = historialCambios;
+        this.sobrepasoEspera = true;
     }
+
+    public void setEspera() { this.sobrepasoEspera = false; } //false para que tenga prioridad en el comparable
 
     public void registrarCambio(String descripcion) {
         historialCambios.add(descripcion);
@@ -33,16 +37,17 @@ public class Paciente implements Comparable<Paciente>{
     }
 
     public long tiempoEsperaActual(long timestamp) {
-        return (timestamp - tiempoLlegada) / 60;
+        return (timestamp - tiempoLlegada);
     }
 
     @Override
     public int compareTo(Paciente otro) {
-        if(this.categoria != otro.getCategoria()) {
-            return Integer.compare(this.categoria, otro.getCategoria());
-        } else {
-            return Long.compare(this.tiempoLlegada, otro.getTiempoLlegada());
-        }
+        //este if pone como prioridad al paciente que haya superado su tiempo de espera segun su categoria
+        if(this.sobrepasoEspera != otro.sobrepasoEspera) return Boolean.compare(this.sobrepasoEspera, otro.sobrepasoEspera);
+
+        else if(this.categoria != otro.getCategoria())  return Integer.compare(this.categoria, otro.getCategoria());
+
+        else return Long.compare(this.tiempoLlegada, otro.getTiempoLlegada());
     }
 
     public String getNombre() {

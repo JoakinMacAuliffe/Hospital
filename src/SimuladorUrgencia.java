@@ -25,10 +25,11 @@ public class SimuladorUrgencia {
 
             if(pacientesAcumulados == 3) {
                 // Atender dos pacientes inmediatamente
-                hospital.atenderSiguiente();
-                hospital.atenderSiguiente();
+                hospital.atenderSiguiente(tiempoActualMinutos);
+                hospital.atenderSiguiente(tiempoActualMinutos);
                 pacientesAcumulados = 0; // Reiniciar contador
             }
+            else if(tiempoActualMinutos % 15 == 0) hospital.atenderSiguiente(tiempoActualMinutos);
 
         }
 
