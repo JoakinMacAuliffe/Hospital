@@ -8,7 +8,6 @@ public class GeneradorPacientes {
     private String[] apellidos = {"Correa", "Pinto", "Mac Auliffe", "Olivares", "Landero"
             , "Novoa", "Olguin", "Tapia", "Lopez", "Turbes"};
     private String[] areas = {"SAPU", "infantil", "urgencia_adulto"};
-    private long timestamp = 0;
     private Set<String> runSet = new HashSet<>(); // Set que contiene todos los RUNs de los pacientes, utilizado para evitar que se repitan
     private List<Paciente> pacientes = new ArrayList<>();
     private Random random = new Random();
