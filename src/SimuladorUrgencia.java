@@ -6,6 +6,10 @@ public class SimuladorUrgencia {
     private int pacientesAcumulados = 0;
     private List<Paciente> listaPacientes;
 
+    Paciente pacienteCat4 = null;
+    long tiempoLlegadaCat4 = -1;
+    long tiempoAtencionCat4 = -1;
+
     public void simular() {
 
         GeneradorPacientes generadorPacientes = new GeneradorPacientes();
@@ -19,20 +23,32 @@ public class SimuladorUrgencia {
             if (!listaPacientes.isEmpty() && listaPacientes.getFirst().getTiempoLlegada() == tiempoActualMinutos) {
                 Paciente paciente = listaPacientes.removeFirst();
                 hospital.registrarPaciente(paciente);
-                System.out.println(paciente.tiempoEsperaActual(tiempoActualMinutos));
                 pacientesAcumulados++;
+
+                if(pacienteCat4 == null && paciente.getCategoria() == 4) { // Obtener primer paciente con categoria 4 para hacer pruebas
+                    pacienteCat4 = paciente;
+                    tiempoLlegadaCat4 = tiempoActualMinutos;
+                }
+
             }
 
             if(pacientesAcumulados == 3) {
-                // Atender dos pacientes inmediatamente
-                hospital.atenderSiguiente(tiempoActualMinutos);
-                hospital.atenderSiguiente(tiempoActualMinutos);
+                for(int i = 0; i < 2; i++) { // Atender dos pacientes inmediatamente
+                    Paciente atendido = hospital.atenderSiguiente(tiempoActualMinutos);
+                    if(atendido != null && atendido.equals(pacienteCat4)) {
+                        tiempoAtencionCat4 = tiempoActualMinutos;
+                    }
+                }
                 pacientesAcumulados = 0; // Reiniciar contador
+            } else if(tiempoActualMinutos % 15 == 0) {
+                Paciente atendido = hospital.atenderSiguiente(tiempoActualMinutos);
+                if(atendido != null && atendido.equals(pacienteCat4)) {
+                    tiempoAtencionCat4 = tiempoActualMinutos;
+                }
             }
-            else if(tiempoActualMinutos % 15 == 0)
-                hospital.atenderSiguiente(tiempoActualMinutos);
-
         }
+
+        System.out.println("Tiempo de atencion de paciente de categoria 4: " + tiempoAtencionCat4 + " minutos");
 
     }
 
