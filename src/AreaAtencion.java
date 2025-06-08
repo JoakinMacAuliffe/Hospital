@@ -20,6 +20,12 @@ public class AreaAtencion {
 
     public Paciente atenderPaciente() {
 
+        PriorityQueue<Paciente> copia = new PriorityQueue<>();
+
+        while(!pacientesHeap.isEmpty()) copia.add(pacientesHeap.poll());
+
+        pacientesHeap = copia;
+
         if(!pacientesHeap.isEmpty()) {
             Paciente paciente = pacientesHeap.poll();
             paciente.setEstado("atendido");

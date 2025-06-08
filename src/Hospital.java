@@ -42,6 +42,7 @@ public class Hospital {
     }
 
     public Paciente atenderSiguiente(long timeStamp) {
+
         if(!colaAtencion.isEmpty()) {
 
             PriorityQueue<Paciente> copia = new PriorityQueue<>();
@@ -109,14 +110,21 @@ public class Hospital {
         Stack<String> a = new Stack<>();
         a.push("no");
 
-        Paciente p1 = new Paciente("hola", "juan", "1", 3, 0, "espera", "SAPU", a);
+        Paciente p1 = new Paciente("hola", "juan", "1", 3, 1, "espera", "SAPU", a);
         Paciente p2 = new Paciente("chao", "lol", "3", 2, 99, "espera", "SAPU", a);
 
         hospital.registrarPaciente(p1);
         hospital.registrarPaciente(p2);
 
+        // Imprimamos el estado antes de atender
+        System.out.println("Estado inicial:");
+        System.out.println("p1: categoria=" + p1.getCategoria() + ", sobrepasoEspera=" + p1.getEsperaDentroDelTiempo());
+        System.out.println("p2: categoria=" + p2.getCategoria() + ", sobrepasoEspera=" + p2.getEsperaDentroDelTiempo());
+
+        // Atendemos en t=100
+        System.out.println("\nAtendiendo en t=100:");
         System.out.println(hospital.atenderSiguiente(100).getNombre());
-        System.out.println(hospital.atenderSiguiente(100).getNombre());
+
 
     }
 
