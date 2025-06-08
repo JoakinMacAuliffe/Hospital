@@ -1,12 +1,12 @@
 import java.util.List;
 
 public class Main{
-    public static void main(String[] args) {
-        GeneradorPacientes generadorPacientes = new GeneradorPacientes();
-        List<Paciente> pacientes = generadorPacientes.generarPacientes(100);
 
-        for (Paciente paciente : pacientes) {
-            System.out.println(paciente.getNombre() + " " + paciente.getApellido() + " " + paciente.getId());
-        }
+    public static void main(String[] main) {
+
+        SimuladorUrgencia simuladorUrgencia = new SimuladorUrgencia();
+        List<Paciente> pacienteList = simuladorUrgencia.leerPacientesDesdeArchivo("Pacientes_24h.txt");
+        simuladorUrgencia.simular();
+
     }
 }

@@ -21,8 +21,11 @@ public class Hospital {
     }
 
     public void registrarPaciente(Paciente paciente) {
+
         colaAtencion.add(paciente);
         pacientesTotales.put(paciente.getId(), paciente);
+        areasAtencion.get(paciente.getArea()).ingresarPaciente(paciente);
+        //busca el area de atencion en el mapa y agrega al paciente a la espera
     }
 
     public void reasignarCategoria(String id, int nuevaCategoria) {
@@ -48,7 +51,7 @@ public class Hospital {
                 Paciente paciente = colaAtencion.poll();
                 long time = paciente.tiempoEsperaActual(timeStamp);
 
-                switch (paciente.getCategoria()){
+                switch (paciente.getCategoria()){ //revisa si alguno de los pacientes de la cola ha esperado demasiado
 
                     case 2:
                         if(time >= 30) paciente.setEspera();
@@ -73,7 +76,8 @@ public class Hospital {
                 // Si el area del paciente existe y no esta saturada
                 pacientesAtendidos.add(paciente);
                 paciente.setEstado("en_atencion");
-                return paciente;
+                return areaAtencion.atenderPaciente();
+
             } else {
                 System.out.println("Error: Area de atencion invalida.");
             }

@@ -18,7 +18,7 @@ public class GeneradorPacientes {
             String nombre = nombres[random.nextInt(nombres.length)];
             String apellido = apellidos[random.nextInt(apellidos.length)];
             String id = generarRUTUnico();
-            int categoria = generarCategoria();
+            int categoria = 0;
             long tiempoLlegada = (i * 600 + 600) / 60;
             String area = areas[random.nextInt(areas.length)];
             Stack<String> historialCambios = new Stack<>();

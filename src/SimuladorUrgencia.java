@@ -33,8 +33,6 @@ public class SimuladorUrgencia {
 
         }
 
-        System.out.println(pacientesAcumulados);
-
     }
 
     public List<Paciente> leerPacientesDesdeArchivo(String nombreArchivo) {

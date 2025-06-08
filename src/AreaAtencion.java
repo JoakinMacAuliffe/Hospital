@@ -19,10 +19,12 @@ public class AreaAtencion {
     }
 
     public Paciente atenderPaciente() {
+
         if(!pacientesHeap.isEmpty()) {
             Paciente paciente = pacientesHeap.poll();
             paciente.setEstado("atendido");
             return paciente;
+
         } else {
             return null;
         }
