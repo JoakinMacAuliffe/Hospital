@@ -38,7 +38,7 @@ public class Paciente implements Comparable<Paciente>{
         return (timestamp - tiempoLlegada);
     }
 
-    Boolean getEsperaDentroDelTiempo(){ return this.esperaDentroDelTiempo; }
+
 
     @Override
     public int compareTo(Paciente otro) {
@@ -76,6 +76,10 @@ public class Paciente implements Comparable<Paciente>{
 
     public long getTiempoLlegada() {
         return tiempoLlegada;
+    }
+
+    public Boolean getEsperaDentroDelTiempo(){
+        return this.esperaDentroDelTiempo;
     }
 
     public void setArea(AreaAtencion areaAtencion) {
