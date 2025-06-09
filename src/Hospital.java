@@ -63,6 +63,7 @@ public class Hospital {
                         break;
                     case 4:
                         if(time >= 180) paciente.setEspera();
+                    case 5:
                     default:
                         break;
                 }
