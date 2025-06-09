@@ -29,6 +29,7 @@ public class AreaAtencion {
         if(!pacientesHeap.isEmpty()) {
             Paciente paciente = pacientesHeap.poll();
             paciente.setEstado("atendido");
+            System.out.println("Paciente " + paciente.getId() + " atendido en " + paciente.getArea());
             return paciente;
 
         } else {

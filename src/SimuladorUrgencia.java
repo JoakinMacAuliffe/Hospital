@@ -5,6 +5,10 @@ public class SimuladorUrgencia {
 
     private int pacientesAcumulados = 0;
     private List<Paciente> listaPacientes;
+    private int pacientesAtendidos;
+    private int[] cantidadPorCategoria = new int[6];
+    private long[] sumaTiemposPorCategoria = new long[6];
+    private int[] atendidosPorCategoria = new int[6];
 
     Paciente pacienteCat4 = null;
     long tiempoLlegadaCat4 = -1;
@@ -14,15 +18,19 @@ public class SimuladorUrgencia {
 
         GeneradorPacientes generadorPacientes = new GeneradorPacientes();
 
-        listaPacientes = leerPacientesDesdeArchivo("Pacientes_24h.txt");
+//        listaPacientes = leerPacientesDesdeArchivo("Pacientes_24h.txt");
+        listaPacientes = generadorPacientes.generarPacientes(200);
 
         Hospital hospital = new Hospital();
 
         for(int tiempoActualMinutos = 1; tiempoActualMinutos <= 1440; tiempoActualMinutos++) {
 
+            System.out.println("Minuto: " + tiempoActualMinutos);
+
             if (!listaPacientes.isEmpty() && listaPacientes.getFirst().getTiempoLlegada() == tiempoActualMinutos) {
                 Paciente paciente = listaPacientes.removeFirst();
                 hospital.registrarPaciente(paciente);
+                cantidadPorCategoria[paciente.getCategoria()]++;
                 pacientesAcumulados++;
 
                 if(pacienteCat4 == null && paciente.getCategoria() == 4) { // Obtener primer paciente con categoria 4 para hacer pruebas
@@ -35,20 +43,41 @@ public class SimuladorUrgencia {
             if(pacientesAcumulados == 3) {
                 for(int i = 0; i < 2; i++) { // Atender dos pacientes inmediatamente
                     Paciente atendido = hospital.atenderSiguiente(tiempoActualMinutos);
-                    if(atendido != null && atendido.equals(pacienteCat4)) {
+                    pacientesAtendidos++;
+
+                    // Calcular tiempos de atencion por categoria
+                    int categoria = atendido.getCategoria();
+                    long tiempoEspera = atendido.tiempoEsperaActual(tiempoActualMinutos);
+                    sumaTiemposPorCategoria[categoria] += tiempoEspera;
+                    atendidosPorCategoria[categoria]++;
+
+                    System.out.println("Paciente " + atendido.getId() + " atendido en " + atendido.tiempoEsperaActual(tiempoActualMinutos) + " minutos.");
+                    if(atendido.equals(pacienteCat4)) {
                         tiempoAtencionCat4 = tiempoActualMinutos;
                     }
                 }
                 pacientesAcumulados = 0; // Reiniciar contador
             } else if(tiempoActualMinutos % 15 == 0) {
                 Paciente atendido = hospital.atenderSiguiente(tiempoActualMinutos);
-                if(atendido != null && atendido.equals(pacienteCat4)) {
+                pacientesAtendidos++;
+                System.out.println("Paciente " + atendido.getId() + " atendido en " + atendido.tiempoEsperaActual(tiempoActualMinutos) + " minutos.");
+                if(atendido.equals(pacienteCat4)) {
                     tiempoAtencionCat4 = tiempoActualMinutos;
                 }
             }
         }
+        System.out.println("-----------------------");
 
-        System.out.println("Tiempo de atencion de paciente de categoria 4: " + tiempoAtencionCat4 + " minutos");
+        System.out.println("Pacientes por categoria: ");
+
+        for(int i = 1; i <= cantidadPorCategoria.length-1; i++) {
+            System.out.println("Categoria " + i + ": " + cantidadPorCategoria[i]);
+        }
+
+
+
+        System.out.println("\nPacientes atendidos: " + pacientesAtendidos);
+        System.out.println("\nTiempo de atencion de paciente de categoria 4: " + tiempoAtencionCat4 + " minutos");
 
     }
 

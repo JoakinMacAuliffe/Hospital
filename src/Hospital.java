@@ -25,6 +25,7 @@ public class Hospital {
         colaAtencion.add(paciente);
         pacientesTotales.put(paciente.getId(), paciente);
         areasAtencion.get(paciente.getArea()).ingresarPaciente(paciente);
+        System.out.println("Paciente " + paciente.getId() + " registrado en " + paciente.getArea());
         //busca el area de atencion en el mapa y agrega al paciente a la espera
     }
 
@@ -72,6 +73,10 @@ public class Hospital {
             colaAtencion = copia;
 
             Paciente paciente = colaAtencion.poll();
+            if (paciente == null) {
+                System.out.println("Error: Cola de atencion vacia tras reconstrucción.");
+                return null;
+            }
             AreaAtencion areaAtencion = areasAtencion.get(paciente.getArea());
             if (areaAtencion != null && (!areaAtencion.estaSaturada())) {
                 // Si el area del paciente existe y no esta saturada
@@ -80,7 +85,8 @@ public class Hospital {
                 return areaAtencion.atenderPaciente();
 
             } else {
-                System.out.println("Error: Area de atencion invalida.");
+                System.out.println("Error: Area de atencion invalida o saturada.");
+                colaAtencion.add(paciente);
             }
         } else {
             System.out.println("Error: Cola de atencion vacia.");
