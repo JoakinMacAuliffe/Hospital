@@ -74,7 +74,13 @@ public class SimuladorUrgencia {
             System.out.println("Categoria " + i + ": " + cantidadPorCategoria[i]);
         }
 
-
+        System.out.println("\nPromedio de tiempos de espera por categoria:");
+        for(int i = 1; i <= 5; i++) {
+            if(atendidosPorCategoria[i] > 0) {
+                double promedio = (double) sumaTiemposPorCategoria[i] / atendidosPorCategoria[i];
+                System.out.println("Categoria " + i + ": " + ((int)(promedio * 100)) / 100.0 + " minutos");
+            }
+        }
 
         System.out.println("\nPacientes atendidos: " + pacientesAtendidos);
         System.out.println("\nTiempo de atencion de paciente de categoria 4: " + tiempoAtencionCat4 + " minutos");
