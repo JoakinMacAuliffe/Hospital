@@ -14,9 +14,9 @@ public class Hospital {
         areasAtencion = new HashMap<>();
         pacientesAtendidos = new ArrayList<>();
 
-        areasAtencion.put("SAPU", new AreaAtencion("SAPU", 100));
-        areasAtencion.put("infantil", new AreaAtencion("infantil", 100));
-        areasAtencion.put("urgencia_adulto", new AreaAtencion("urgencia_adulto", 100));
+        areasAtencion.put("SAPU", new AreaAtencion("SAPU", 15));
+        areasAtencion.put("infantil", new AreaAtencion("infantil", 15));
+        areasAtencion.put("urgencia_adulto", new AreaAtencion("urgencia_adulto", 15));
 
     }
 

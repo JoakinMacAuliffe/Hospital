@@ -20,12 +20,12 @@ public class SimuladorUrgencia {
     public void simular() {
 
         // Modificar este valor para cambiar la duracion de la simulacion, 1440 minutos son 24 horas.
-        int duracionSimulacionMinutos = 10080;
+        int duracionSimulacionMinutos = 1440;
 
         GeneradorPacientes generadorPacientes = new GeneradorPacientes();
 
 //        listaPacientes = leerPacientesDesdeArchivo("Pacientes_24h.txt");
-        listaPacientes = generadorPacientes.generarPacientes(1008);
+        listaPacientes = generadorPacientes.generarPacientes(144);
 
         Hospital hospital = new Hospital();
 
@@ -49,33 +49,40 @@ public class SimuladorUrgencia {
             if(pacientesAcumulados == 3) {
                 for(int i = 0; i < 2; i++) { // Atender dos pacientes inmediatamente
                     Paciente atendido = hospital.atenderSiguiente(tiempoActualMinutos);
-                    if(!atendido.getEsperaDentroDelTiempo()) {
+                    if(atendido != null && !atendido.getEsperaDentroDelTiempo()) {
                         pacientesExcedenTiempo.add(atendido);
                     }
                     pacientesAtendidos++;
 
                     // Calcular tiempos de atencion por categoria
-                    int categoria = atendido.getCategoria();
-                    long tiempoEspera = atendido.tiempoEsperaActual(tiempoActualMinutos);
-                    sumaTiemposPorCategoria[categoria] += tiempoEspera;
-                    atendidosPorCategoria[categoria]++;
+                    if(atendido != null) {
+                        int categoria = atendido.getCategoria();
+                        long tiempoEspera = atendido.tiempoEsperaActual(tiempoActualMinutos);
+                        sumaTiemposPorCategoria[categoria] += tiempoEspera;
+                        atendidosPorCategoria[categoria]++;
+                    }
 
-                    System.out.println("Paciente " + atendido.getId() + " atendido en " + atendido.tiempoEsperaActual(tiempoActualMinutos) + " minutos.");
-                    if(atendido.equals(pacienteCat4)) {
-                        tiempoAtencionCat4 = tiempoActualMinutos;
+                    if(atendido != null) {
+                        System.out.println("Paciente " + atendido.getId() + " atendido en " + atendido.tiempoEsperaActual(tiempoActualMinutos) + " minutos.");
+                        if (atendido.equals(pacienteCat4)) {
+                            tiempoAtencionCat4 = tiempoActualMinutos;
+                        }
                     }
                 }
                 pacientesAcumulados = 0; // Reiniciar contador
             } else if(tiempoActualMinutos % 15 == 0) {
                 Paciente atendido = hospital.atenderSiguiente(tiempoActualMinutos);
-                if(!atendido.getEsperaDentroDelTiempo()) {
+                if(atendido != null && !atendido.getEsperaDentroDelTiempo()) {
                     pacientesExcedenTiempo.add(atendido);
                 }
                 pacientesAtendidos++;
-                System.out.println("Paciente " + atendido.getId() + " atendido en " + atendido.tiempoEsperaActual(tiempoActualMinutos) + " minutos.");
-                if(atendido.equals(pacienteCat4)) {
-                    tiempoAtencionCat4 = tiempoActualMinutos;
+                if(atendido != null) {
+                    System.out.println("Paciente " + atendido.getId() + " atendido en " + atendido.tiempoEsperaActual(tiempoActualMinutos) + " minutos.");
+                    if(atendido.equals(pacienteCat4)) {
+                        tiempoAtencionCat4 = tiempoActualMinutos;
+                    }
                 }
+
             }
         }
         System.out.println("-----------------------");
