@@ -5,7 +5,7 @@ public class SimuladorUrgencia {
 
     private int pacientesAcumulados = 0;
     private List<Paciente> listaPacientes;
-    private int pacientesAtendidos;
+    private int pacientesAtendidos = 0;
     private int[] cantidadPorCategoria = new int[6];
     private long[] sumaTiemposPorCategoria = new long[6];
     private int[] atendidosPorCategoria = new int[6];
